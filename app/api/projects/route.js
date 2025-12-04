@@ -20,30 +20,29 @@ export async function GET() {
 
 export async function POST(request) {
   try {
-    // TODO: Implement POST request to create a new project
-    // Instructions for students:
-    // 1. Parse the request body to get project data
-    // 2. Use prisma.project.create() to create a new project
-    // 3. Return the created project as JSON
-    // 4. Validate required fields before creating
-    
-    // Example implementation (students should write this):
-    // const body = await request.json();
-    // const { title, description, imageUrl, projectUrl, githubUrl, technologies } = body;
-    // 
-    // const project = await prisma.project.create({
-    //   data: {
-    //     title,
-    //     description,
-    //     imageUrl,
-    //     projectUrl,
-    //     githubUrl,
-    //     technologies
-    //   }
-    // });
-    // return NextResponse.json(project, { status: 201 });
+    const body = await request.json();
+    const { title, description, imageUrl = '', projectUrl = '', githubUrl = '', technologies } = body;
 
-    return NextResponse.json({ message: "TODO: Implement POST /api/projects" }, { status: 501 });
+    // Validate required fields
+    if (!title || !description || !technologies || !Array.isArray(technologies) || technologies.length === 0) {
+      return NextResponse.json(
+        { error: 'Title, description, and technologies are required' },
+        { status: 400 }
+      );
+    }
+
+    const project = await prisma.project.create({
+      data: {
+        title,
+        description,
+        imageUrl: imageUrl || null,
+        projectUrl: projectUrl || null,
+        githubUrl: githubUrl || null,
+        technologies
+      }
+    });
+
+    return NextResponse.json(project, { status: 201 });
   } catch (error) {
     console.error('Error creating project:', error);
     return NextResponse.json(
