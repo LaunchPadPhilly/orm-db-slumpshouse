@@ -526,32 +526,7 @@ This opens a browser tab where you can:
 
 Now you'll update your projects page to fetch data from your API instead of using placeholder data.
 
-### 7.1: Using the Project Creation Interface
 
-Your projects page now includes a **project creation interface** that allows you to add new projects directly from the browser! Here's how to use it:
-
-1. **Open `app/projects/page.js`** - This page is already set up as a client component with form functionality
-
-2. **The projects page now includes:**
-   - A "Add New Project" button in the top right
-   - A project creation form that slides down when clicked
-   - Automatic fetching and display of projects from your database
-   - Form validation and error handling
-
-3. **To add a new project:**
-   - Visit `/projects` in your browser
-   - Click the "Add New Project" button
-   - Fill out the form with your project details
-   - Add technologies using the technology input (type custom ones or use quick-add buttons)
-   - Click "Create Project" to save to the database
-
-4. **The form includes these fields:**
-   - **Project Title*** (required)
-   - **Description*** (required)  
-   - **Technologies Used*** (required) - Add multiple technologies with the tag interface
-   - **Image URL** (optional) - Link to a screenshot of your project
-   - **Live Demo URL** (optional) - Link to where people can see your project
-   - **GitHub URL** (optional) - Link to your source code
 
 ### 7.2: Form Components Explained
 
