@@ -318,3 +318,79 @@ Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited b
   84 |     if (isNaN(id)) {
   85 |       return NextResponse.json(
  DELETE /api/projects/99999 404 in 458ms
+ GET /api/projects 200 in 384ms
+ GET /api/projects 200 in 360ms
+ GET /api/projects 200 in 409ms
+ POST /api/projects 201 in 338ms
+ POST /api/projects 201 in 406ms
+ POST /api/projects 400 in 325ms
+Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at GET (app\api\projects\[id]\route.js:8:32)
+   6 | export async function GET(request, { params }) {
+   7 |   try {
+>  8 |     const id = parseInt(params.id);
+     |                                ^
+   9 |     
+  10 |     // Validate that id is a number
+  11 |     if (isNaN(id)) {
+ GET /api/projects/923 200 in 480ms
+Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at GET (app\api\projects\[id]\route.js:8:32)
+   6 | export async function GET(request, { params }) {
+   7 |   try {
+>  8 |     const id = parseInt(params.id);
+     |                                ^
+   9 |     
+  10 |     // Validate that id is a number
+  11 |     if (isNaN(id)) {
+ GET /api/projects/99999 404 in 403ms
+Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at GET (app\api\projects\[id]\route.js:8:32)
+   6 | export async function GET(request, { params }) {
+   7 |   try {
+>  8 |     const id = parseInt(params.id);
+     |                                ^
+   9 |     
+  10 |     // Validate that id is a number
+  11 |     if (isNaN(id)) {
+ GET /api/projects/invalid-id 400 in 433ms
+Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PUT (app\api\projects\[id]\route.js:41:32)
+  39 | export async function PUT(request, { params }) {
+  40 |   try {
+> 41 |     const id = parseInt(params.id);
+     |                                ^
+  42 |     
+  43 |     if (isNaN(id)) {
+  44 |       return NextResponse.json(
+ PUT /api/projects/927 200 in 427ms
+Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PUT (app\api\projects\[id]\route.js:41:32)
+  39 | export async function PUT(request, { params }) {
+  40 |   try {
+> 41 |     const id = parseInt(params.id);
+     |                                ^
+  42 |     
+  43 |     if (isNaN(id)) {
+  44 |       return NextResponse.json(
+ PUT /api/projects/99999 404 in 404ms
+Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at DELETE (app\api\projects\[id]\route.js:82:32)
+  80 | export async function DELETE(request, { params }) {
+  81 |   try {
+> 82 |     const id = parseInt(params.id);
+     |                                ^
+  83 |     
+  84 |     if (isNaN(id)) {
+  85 |       return NextResponse.json(
+ DELETE /api/projects/928 200 in 435ms
+Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at DELETE (app\api\projects\[id]\route.js:82:32)
+  80 | export async function DELETE(request, { params }) {
+  81 |   try {
+> 82 |     const id = parseInt(params.id);
+     |                                ^
+  83 |     
+  84 |     if (isNaN(id)) {
+  85 |       return NextResponse.json(
+ DELETE /api/projects/99999 404 in 443ms
