@@ -470,3 +470,4 @@ Error: Route "/api/projects/[id]" used `params.id`. `params` should be awaited b
   84 |     if (isNaN(id)) {
   85 |       return NextResponse.json(
  DELETE /api/projects/99999 404 in 380ms
+^C
